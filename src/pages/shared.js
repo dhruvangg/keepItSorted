@@ -13,7 +13,7 @@ export default function shared() {
     const { name, description, link } = router.query
 
     useEffect(() => {
-        setCategory(topics[0].value)
+        setCategory(topics[0]?.value)
     }, [topics])
 
     const handleSubmit = async (e) => {
