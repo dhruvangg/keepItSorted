@@ -37,6 +37,7 @@ export default function Home() {
             </div>
           </Link>
         })}
+        {(!items || items.length === 0) && <p className='text-center font-bold'>There is nothing in your list.</p>}
       </div>
     </main >
   )

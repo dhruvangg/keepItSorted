@@ -9,6 +9,9 @@ export default function Document() {
         <meta name="theme-color" content="#2f3d58" />
       </Head>
       <body>
+        <header>
+          <h1 className='text-center font-bold text-3xl'>Keep_It_Sorted</h1>
+        </header>
         <Main />
         <NextScript />
       </body>

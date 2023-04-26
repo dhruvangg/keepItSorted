@@ -13,26 +13,22 @@ export default function shared() {
     const { name, description, link } = router.query
 
     useEffect(() => {
-        setCategory(topics[0]?.value)
+        setCategory(topics[0])
     }, [topics])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log(name, description, link, category);
-
         try {
-            const id = await db.items.add({ name, description, link, category });
+            const id = await db.items.add({ name, description, link, category: category.value });
             setStatus(`Friend ${name} successfully added. Got id ${id}`);
         } catch (error) {
             setStatus(`Failed to add ${name}: ${error}`);
         }
-
     }
 
     const updateCategory = (data) => {
         const { value, label, __isNew__ } = data;
-        console.log(value);
-        setCategory(value);
+        setCategory({ value, label });
         if (__isNew__) {
             createTopic({ value, label })
         }
