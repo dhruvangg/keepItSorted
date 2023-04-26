@@ -1,0 +1,27 @@
+{
+    "lang": "en-us",
+    "name": "KeepItSorted",
+    "short_name": "KeepItSorted",
+    "description": "A simple app through which user can store all the links at one place.",
+    "start_url": "/",
+    "background_color": "#2f3d58",
+    "theme_color": "#2f3d58",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "/icon512.png",
+            "sizes": "512x512"
+        }
+    ],
+    "share_target": {
+        "action": "/shared",
+        "method": "GET",
+        "enctype": "application/x-www-form-urlencoded",
+        "params": {
+            "title": "name",
+            "text": "description",
+            "url": "link"
+        }
+    }
+}
