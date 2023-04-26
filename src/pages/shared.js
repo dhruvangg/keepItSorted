@@ -40,7 +40,8 @@ export default function shared() {
     return (
         <div className='flex justify-center items-center min-h-screen'>
             <form className='w-96 text-black' onSubmit={handleSubmit}>
-                <p className='text-white text-center mb-4'>{status}</p>
+                {JSON.stringify(router.query)}
+                <p className='text-center mb-4'>{status}</p>
                 <div className='mb-4'>
                     <CreatableSelect instanceId={useId()} isClearable options={topics} onChange={updateCategory} name='category' />
                 </div>
