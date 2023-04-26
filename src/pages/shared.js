@@ -18,9 +18,11 @@ export default function shared() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        const { value: category } = e.target.category;
+        console.log({ name, description, link, category });
         try {
             const id = await db.items.add({ name, description, link, category: category.value });
-            setStatus(`Friend ${name} successfully added. Got id ${id}`);
+            setStatus(`Item ${name} successfully added. Got id ${id}`);
         } catch (error) {
             setStatus(`Failed to add ${name}: ${error}`);
         }
@@ -40,7 +42,7 @@ export default function shared() {
                 {JSON.stringify(router.query)}
                 <p className='text-center mb-4'>{status}</p>
                 <div className='mb-4'>
-                    <CreatableSelect instanceId={useId()} isClearable options={topics} onChange={updateCategory} name='category' />
+                    <CreatableSelect instanceId={useId()} isClearable name='category' />
                 </div>
                 <button className='bg-white px-3 py-1 rounded w-full'>Add</button>
             </form>
