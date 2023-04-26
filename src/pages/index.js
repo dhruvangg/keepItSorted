@@ -26,7 +26,7 @@ export default function Home() {
       {/* <p className='text-white text-center mb-4'>{status}</p> */}
       <div className='w-full max-w-screen-sm'>
         {items?.map(el => {
-          return <Link href={el.link} target="_blank" className="border border-gray-200 w-full block rounded overflow-hidden shadow-lg mb-5">
+          return <Link key={el.id} href={el.link} target="_blank" className="border border-gray-200 w-full block rounded overflow-hidden shadow-lg mb-5">
             {/* <Image className="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains" width={100} height={100} /> */}
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">{el.name}</div>
