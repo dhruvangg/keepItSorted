@@ -13,7 +13,7 @@ export default function shared() {
     const { name, description, link } = router.query
 
     useEffect(() => {
-        setCategory(topics[0])
+        setCategory(topics[0].value)
     }, [topics])
 
     const handleSubmit = async (e) => {
@@ -31,6 +31,7 @@ export default function shared() {
 
     const updateCategory = (data) => {
         const { value, label, __isNew__ } = data;
+        console.log(value);
         setCategory(value);
         if (__isNew__) {
             createTopic({ value, label })
