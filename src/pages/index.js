@@ -1,10 +1,7 @@
-import { Inter } from 'next/font/google'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { db } from '@/db';
 import { toast } from 'react-toastify';
 import Link from 'next/link';
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const items = useLiveQuery(() => db.items.toArray());
@@ -20,8 +17,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <div className="container mt-4 mx-auto">
-        {items && JSON.stringify(items)}
-        {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {items?.map(el => {
             const { id, name, description, link, category } = el;
             return <div key={id} className="flex flex-col justify-between card m-2 p-3 cursor-pointer border border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
@@ -52,7 +48,7 @@ export default function Home() {
               <p className="font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200">There is nothing in your list.</p>
             </div>
           </div>}
-        </div> */}
+        </div>
       </div>
     </main >
   )
