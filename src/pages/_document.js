@@ -12,10 +12,10 @@ export default function Document() {
       </Head>
       <body>
         <ErrorBoundary fallback={<p>Something went wrong</p>}>
-          <header class="p-4 shadow-sm">
-            <div class="inline-block text-lg"><h1>KeepItSorted</h1></div>
-            <div class="inline-block top-auto text-teal-800 float-right rounded-full mx-1 px-2"><Link href="/shared" class="align-middle">Shared</Link></div>
-            <div class="inline-block top-auto text-teal-800 float-right rounded-full px-2 bg-teal-100"><Link href="/" class="align-middle">Home</Link></div>
+          <header className="p-4 shadow-sm">
+            <div className="inline-block text-lg"><h1>KeepItSorted</h1></div>
+            <div className="inline-block top-auto text-teal-800 float-right rounded-full mx-1 px-2"><Link href="/shared" className="align-middle">Shared</Link></div>
+            <div className="inline-block top-auto text-teal-800 float-right rounded-full px-2 bg-teal-100"><Link href="/" className="align-middle">Home</Link></div>
           </header>
           <Main />
           <NextScript />
